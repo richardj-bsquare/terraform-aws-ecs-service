@@ -68,9 +68,9 @@ resource "aws_ecs_service" "awsvpc_nolb" {
   network_configuration {
     security_groups = ["${var.awsvpc_service_security_groups}"]
     subnets         = ["${var.awsvpc_service_subnetids}"]
+    assign_public_ip = true
   }
 
-  assign_public_ip = true
 
   launch_type = "${var.service_launch_type}"
 }
