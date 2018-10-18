@@ -70,6 +70,8 @@ resource "aws_ecs_service" "awsvpc_nolb" {
     subnets         = ["${var.awsvpc_service_subnetids}"]
   }
 
+  assign_public_ip = true
+
   launch_type = "${var.service_launch_type}"
 }
 
